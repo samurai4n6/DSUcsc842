@@ -20,12 +20,18 @@ manage work in our SOC.
 What does the project do?
 
 This project does the following:
+
 -Identifies an initial and end dates that pertain to the timeframe you would like cyber security tickets to be collected.
+
 -Checks and cleans up JSON and CSV files that may be present from a previous run.
+
 -Builds an HTTPS connection to the Zendesk API to pull ticket related data in JSON format within the requested time frame.
+
 -Creates a JSON file of the ticket data.
+
 -Creates a CSV with targeted fields/keys from the JSON data.
--Utilizes pandas to count tickets by date and generating a line graph of the count by data.
+
+-Utilizes pandas to count tickets by date and generating a line graph of the count by date.
 
 Future Work
 
