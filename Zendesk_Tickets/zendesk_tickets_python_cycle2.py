@@ -20,7 +20,7 @@ def get_ticket_dates(prompt):
 
 print("Enter your starting date for requesting cyber security tickets requested: ")
 initial_date = get_ticket_dates(">")
-print("Enter your starting date for requesting cyber security tickets requested: ")
+print("Enter your ending date for requesting cyber security tickets requested: ")
 end_date = get_ticket_dates(">")
 
 #Check if JSON file already present and remove if present.
