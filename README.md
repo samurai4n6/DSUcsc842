@@ -46,13 +46,13 @@ Forensic examiners and analysts need to be able to mount images in order to anal
 
 Why is project the useful?
 
-This project is useful, becasue you never know when a tool may fail, have complicaitons, or some other issue is present that causes a tool to fail
+This project is useful, becasue you never know when a tool may fail, have complicaitons, or some other issue is present that causes a tool to fail image mounting. This tool will determine if you are on a Linux or Windows host and attempt to mount the EWF/E01 file and provide options. Within Windows there are options that once the image mounts, you can unmount and exit, display current volumes, and collect files. For Linux the only options right now are to unmount and exit and display current volumes.
 
 What does the project do?
 
 This project does the following:
 
--Identifies an initial and end dates that pertain to the timeframe you would like cyber security tickets to be collected.
+-Mounts an EWF/E01 forensic image in either a Linux or Windows environment.
 
 -Checks and cleans up JSON and CSV files that may be present from a previous run.
 
@@ -72,6 +72,7 @@ Future Work
 Dependeices
 -For Windows,
   -It is assumed that you Arsenal Image Mounter available for the Python code to call the cli tool. Arsenal is one the best free and paid image mounter available. Having a CLI binary allows for scripting and automating tasks.
+  -KAPE for file collection https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape
 
 
 References
