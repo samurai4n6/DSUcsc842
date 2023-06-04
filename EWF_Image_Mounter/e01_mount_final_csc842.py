@@ -113,7 +113,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Mount an E01 forensic image using Arsenal Image Mounter.')
     parser.add_argument('-image', type=str, help='Path to the E01 image file')
     parser.add_argument('-ewf_mount', type=str, help='Linux path to mount point using ewftools(optional arguement, Linux only)')
-    parser.add_argument('-win_mount', type=str, help='Linux path to mount point using ewftools(optional arguement, Linux only)')
+    parser.add_argument('-win_mount', type=str, help='Linux path to mount point for filesystem(optional arguement, Linux only)')
     args = parser.parse_args()
 
     if args.image:
@@ -129,3 +129,22 @@ if __name__ == '__main__':
         else:
             print("Unsupported operating system....")
 
+"""
+Dependeices
+-For Windows,
+  -It is assumed that you Arsenal Image Mounter available for the Python code to call the cli tool. Arsenal is one the best free and paid image mounter available. Having a CLI binary allows for scripting and automating tasks.
+  -KAPE for file collection https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape
+-For Linux,
+  -sudo apt install tsk TSKs (The Sleuth's Kit) MMLS, do determine sector size and byte count.
+  -sudo apt install ewf-tools ewf-tools contains the needed files to interact with the EWF/E01 file
+  -I leveraged SANS SIFT for testing since most of what I need is already there.
+  
+References
+https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape
+https://github.com/dlcowen/dfirwizard
+https://github.com/libyal/libewf
+https://wiki.sleuthkit.org/index.php?title=Mmls
+https://realpython.com/command-line-interfaces-python-argparse/
+https://stackoverflow.com/questions/70300494/how-do-i-run-a-script-with-elevated-uac-permissions-using-ctypes
+
+"""
