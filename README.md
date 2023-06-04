@@ -38,7 +38,44 @@ Future Work
 -Integrate more API calls to further enrich the ticket data for metrics.
 -Perform additional statistical analysis via pandas for metrics.
 
-Cycle4 -
+Cycle4 - E01/EWF File Image Mounter
+
+What is the purpose of the project?
+
+Forensic examiners and analysts need to be able to mount images in order to analyze content as it relates to an investigation. The focus was to mount and handle Expert Witness Format (EWF / E01 / Encase images) images to a Windows or Linux environment.
+
+Why is project the useful?
+
+This project is useful, becasue you never know when a tool may fail, have complicaitons, or some other issue is present that causes a tool to fail
+
+What does the project do?
+
+This project does the following:
+
+-Identifies an initial and end dates that pertain to the timeframe you would like cyber security tickets to be collected.
+
+-Checks and cleans up JSON and CSV files that may be present from a previous run.
+
+-Builds an HTTPS connection to the Zendesk API to pull ticket related data in JSON format within the requested time frame.
+
+-Creates a JSON file of the ticket data.
+
+-Creates a CSV with targeted fields/keys from the JSON data.
+
+-Utilizes pandas to count tickets by date and generating a line graph of the count by date.
+
+Future Work
+
+-Add cross-platform functionality for MacOS
+-Build in other image file formats like Raw/dd, AFF4, and others.
+
+Dependeices
+-For Windows,
+  -It is assumed that you Arsenal Image Mounter available for the Python code to call the cli tool. Arsenal is one the best free and paid image mounter available. Having a CLI binary allows for scripting and automating tasks.
+
+
+References
+
 
 Cycle6 - 
 
