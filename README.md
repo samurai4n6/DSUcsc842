@@ -2,9 +2,9 @@
 Code for DSU CSC 842 course
 
 
-Cycle2 - Zendesk Ticket Collection
+_**Cycle2 - Zendesk Ticket Collection**_
 
-What is the purpose of the project?
+**What is the purpose of the project?**
 
 The purpose of the project came from a need that I have in collecting metrics for cyber security tickets that our SOC performs.
 Management was asking how many tickets our SOC was receiving to be worked, which aided in showing how many more positions we needed for hire.
@@ -12,12 +12,12 @@ Management was asking how many tickets our SOC was receiving to be worked, which
 The Zendesk API is required, and hte following link is beneficial:
 https://developer.zendesk.com/api-reference/
 
-Why is project the useful?
+**Why is project the useful?**
 
 This project is use for cyber security management. I need to understand how many tickets we receive to gauge work load, identify trends and increases in work, and effectively
 manage work in our SOC.
 
-What does the project do?
+**What does the project do?**
 
 This project does the following:
 
@@ -33,22 +33,22 @@ This project does the following:
 
 -Utilizes pandas to count tickets by date and generating a line graph of the count by date.
 
-Future Work
+**Future Work**
 
 -Integrate more API calls to further enrich the ticket data for metrics.
 -Perform additional statistical analysis via pandas for metrics.
 
-Cycle4 - E01/EWF File Image Mounter
+_**Cycle4 - E01/EWF File Image Mounter**_
 
-What is the purpose of the project?
+**What is the purpose of the project?**
 
 Forensic examiners and analysts need to be able to mount images in order to analyze content as it relates to an investigation. The focus was to mount and handle Expert Witness Format (EWF / E01 / Encase images) images to a Windows or Linux environment.
 
-Why is project the useful?
+**Why is project the useful?**
 
 This project is useful, becasue you never know when a tool may fail, have complicaitons, or some other issue is present that causes a tool to fail image mounting. This tool will determine if you are on a Linux or Windows host and attempt to mount the EWF/E01 file and provide options. Within Windows there are options that once the image mounts, you can unmount and exit, display current volumes, and collect files. For Linux the only options right now are to unmount and exit and display current volumes. 
 
-What does the project do?
+**What does the project do?**
 
 This project does the following:
 
@@ -64,7 +64,7 @@ This project does the following:
 
 -For just Windows there is a triage collection option, that utilizes KAPE to collect the files.
 
-Future Work
+**Future Work**
 
 -Add cross-platform functionality for MacOS
 
@@ -79,7 +79,7 @@ Future Work
 
 -Make tool portable. KAPE and AIM can already be used in a portable way.
 
-Dependeices
+**Dependeices**
 
 -For Windows,
 
