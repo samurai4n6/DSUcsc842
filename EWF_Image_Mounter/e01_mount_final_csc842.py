@@ -104,14 +104,14 @@ def mount_image_linux(image_path, ewf_point, win_mount):
 
 if __name__ == '__main__':
     # Run the script with admin privileges on Windows
-    print('Attempting to mount image....')
-    if platform.system() == 'Windows':
-        run_as_admin()
-    else:
-        pass
+    #print('Attempting to mount image....')
+    #if platform.system() == 'Windows':
+        #run_as_admin()
+    #else:
+    #    pass
 
     parser = argparse.ArgumentParser(description='Mount an E01 forensic image using Arsenal Image Mounter.')
-    parser.add_argument('-image', type=str, help='Path to the E01 image file')
+    parser.add_argument('-image', type=str, help='Path to the E01 image file', required=True)
     parser.add_argument('-ewf_mount', type=str, help='Linux path to mount point using ewftools(optional arguement, Linux only)')
     parser.add_argument('-win_mount', type=str, help='Linux path to mount point for filesystem(optional arguement, Linux only)')
     args = parser.parse_args()
@@ -122,12 +122,15 @@ if __name__ == '__main__':
 
         if platform.system() == 'Windows':
             print("You are on a Windows host...")
+            run_as_admin()
             mount_image_windows(image_path)
         elif platform.system() == 'Linux':
             print("You are on a Linux host...")
             mount_image_linux(image_path, args.ewf_mount, args.win_mount)
         else:
             print("Unsupported operating system....")
+    else:
+        parser.print_help()
 
 """
 Dependeices
