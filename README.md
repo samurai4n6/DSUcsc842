@@ -67,20 +67,31 @@ This project does the following:
 Future Work
 
 -Add cross-platform functionality for MacOS
+
 -Build in other image file formats like Raw/dd, AFF4, and others.
+
   -With Windows and AIM, many of hte formats will work, but with Linux there will likely be subtle differences in hte needed options to mount.
+  
 -There is a python libary called pyewf, and while I attempted to use, I ran into error after error trying it. 
 -Add auto installer for dependencies.
+
 -Perhaps compile into a stand-alone binary.
+
 -Make tool portable. KAPE and AIM can already be used in a portable way.
 
 Dependeices
 -For Windows,
+
   -It is assumed that you Arsenal Image Mounter available for the Python code to call the cli tool. Arsenal is one the best free and paid image mounter available. Having a CLI binary allows for scripting and automating tasks.
+  
   -KAPE for file collection https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape
+  
 -For Linux,
+
   -sudo apt install tsk TSKs (The Sleuth's Kit) MMLS, do determine sector size and byte count.
+  
   -sudo apt install ewf-tools ewf-tools contains the needed files to interact with the EWF/E01 file
+  
   -I leveraged SANS SIFT for testing since most of what I need is already there.
   
 References
