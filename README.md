@@ -80,6 +80,7 @@ Future Work
 -Make tool portable. KAPE and AIM can already be used in a portable way.
 
 Dependeices
+
 -For Windows,
 
   -It is assumed that you Arsenal Image Mounter available for the Python code to call the cli tool. Arsenal is one the best free and paid image mounter available. Having a CLI binary allows for scripting and automating tasks.
