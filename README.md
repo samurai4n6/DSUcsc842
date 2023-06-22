@@ -146,6 +146,9 @@ This project does the following:
 
 -Add a thumbnail in the pop-up for the folium map.
 
+**_Video Link_**
+https://www.youtube.com/watch?v=AV0qPDKohFQ
+
 **Resources/References/Inspiration**
 https://exiftool.org/
 
