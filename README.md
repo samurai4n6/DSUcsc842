@@ -146,6 +146,19 @@ This project does the following:
 
 -Add a thumbnail in the pop-up for the folium map.
 
+**Resources/References/Inspiration**
+https://exiftool.org/
+
+https://exiftool.org/TagNames/EXIF.html
+
+https://caseguard.com/articles/digital-evidence-exif-data/
+
+https://www.thepythoncode.com/article/extracting-image-metadata-in-python
+
+https://medium.com/spatial-data-science/how-to-extract-gps-coordinates-from-images-in-python-e66e542af354
+
+https://medium.com/geekculture/extract-gps-information-from-photos-using-python-79288c58ccd9
+
 Cycle8 - 
 
 Cycle10 -
