@@ -136,6 +136,8 @@ This project does the following:
 
 -If there are images with GPS information a map with plotted GPS points will be provided, along with assoicated metadata and a hyperlink to the JPEG.
 
+-Outputs csv and html map to folder named 'picutre_results_ISODATE_ISOTIME'
+
 **Future Work**
 
 -Perhaps compile into a stand-alone binary.
