@@ -98,11 +98,17 @@ This project does the following:
   
 References
 https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape
+
 https://github.com/dlcowen/dfirwizard
+
 https://github.com/libyal/libewf
+
 https://wiki.sleuthkit.org/index.php?title=Mmls
+
 https://realpython.com/command-line-interfaces-python-argparse/
+
 https://stackoverflow.com/questions/70300494/how-do-i-run-a-script-with-elevated-uac-permissions-using-ctypes
+
 https://arsenalrecon.com/products/arsenal-image-mounter
 
 
@@ -147,9 +153,11 @@ This project does the following:
 -Add a thumbnail in the pop-up for the folium map.
 
 **_Video Link_**
+
 https://www.youtube.com/watch?v=AV0qPDKohFQ
 
 **Resources/References/Inspiration**
+
 https://exiftool.org/
 
 https://exiftool.org/TagNames/EXIF.html
