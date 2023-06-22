@@ -36,6 +36,7 @@ This project does the following:
 **Future Work**
 
 -Integrate more API calls to further enrich the ticket data for metrics.
+
 -Perform additional statistical analysis via pandas for metrics.
 
 _**Cycle4 - E01/EWF File Image Mounter**_
@@ -105,7 +106,43 @@ https://stackoverflow.com/questions/70300494/how-do-i-run-a-script-with-elevated
 https://arsenalrecon.com/products/arsenal-image-mounter
 
 
-Cycle6 - 
+_**Cycle6 - Image Mapper And eXif eXtractor (IMAXX)**_
+
+**What is the purpose of the project?**
+
+JPEG (also JPG) files takes from phones and camera may provide crucial metadata that may be relevant in an investigation. Exif data such as Camera Model, Software, Orientation GPS cordinates, and much more could be within EXIF data of a JPEG. This tool will extract targeted metadata from JPEG files, display the targeted metadata, if GPS coordinates are identified they will extracted, and mapped with the Python libarary Folium.
+
+**Why is project the useful?**
+
+These exif data points can be crucial in an investigation. From a law enforcement perspective let's say a mobile device or phone was recovered. Well if pictures were taken recently on the device, there could be exif data that could be extracted and provide possible leads for either a victim or subject of an ivestigation. From a corporate perspective, the same may be true. Perhaps a subject took a picture with their phone, which contained sensitive data, and emailed the picture from their email client to a personal email address. This exif data could show their specific phone model, phone version, and software, GPS coordinates, date and time of picture taken (which could be correlated to other evidence), and more.
+
+Also while most websites will strip all or some of hte exif data from JPEGs, there are some sites that may keep it, and you never know when that might be useful.
+
+**What does the project do?**
+
+This project does the following:
+
+-Parses either (1) JPEG file or a directory of JPEG files.
+
+-Extracts all Exif data from the JPEG, and places into variables, and returns hte targeted metadata.
+
+-If GPS coordinates are found they will be converted in a format that Google Maps and Folium can plot.
+
+-If GPS coordinates are found a Google Maps URL will be created.
+
+-A table of the results will, which includes the file name and associated metadata identified will be displayed in console.
+
+-A csv of the same results shown in the table will be created for furhter manipulation.
+
+-If there are images with GPS information a map with plotted GPS points will be provided, along with assoicated metadata and a hyperlink to the JPEG.
+
+**Future Work**
+
+-Perhaps compile into a stand-alone binary.
+
+-Consider other metadata to include in the results.
+
+-Add a thumbnail in the pop-up for the folium map.
 
 Cycle8 - 
 
