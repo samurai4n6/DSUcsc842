@@ -9,7 +9,7 @@ _**Cycle2 - Zendesk Ticket Collection**_
 The purpose of the project came from a need that I have in collecting metrics for cyber security tickets that our SOC performs.
 Management was asking how many tickets our SOC was receiving to be worked, which aided in showing how many more positions we needed for hire.
 
-The Zendesk API is required, and hte following link is beneficial:
+The Zendesk API is required, and the following link is beneficial:
 https://developer.zendesk.com/api-reference/
 
 **Why is project the useful?**
