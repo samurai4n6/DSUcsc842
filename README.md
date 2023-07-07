@@ -170,6 +170,71 @@ https://medium.com/spatial-data-science/how-to-extract-gps-coordinates-from-imag
 
 https://medium.com/geekculture/extract-gps-information-from-photos-using-python-79288c58ccd9
 
-Cycle8 - 
+_**Cycle8 - Excel calcChain Examiner**_
+
+**What is the purpose of the project?**
+
+I was unsure of my next project and Google searching ideas. The inspiration for this project came from a recent article I read from Datacolada (see refernece) below. Datacoloda posted evidence of academic dishonesty from a Harvard professor on multiple papers. Without going into drama or saying who is right or wrong, it does appear that the named professor had had at least (3) papers retracted from their scholarly sources and is on administrative leave from Harvard when last checked. Also the folks running this site are university behavioral science, business, and information system professor too. With one of those papers they reviewied an xml file within an excel file called calChain.xml. The long and short of it is, when you create a formula in Execl this xml file is created and creates an ordered list of the formulas keeping their **_original_** index position. Meaning, if someone were to move the formula the cell location may change, but it stays in the relative index position where it was originially created. 
+
+I was intrigued with their work, there was not much in the forenisc community about calcChain.xml so I thought I might be treading into relatively new territory, and this was very recent activity. So I thought I would try to create a tool that extracts calcChain.xml from Excel files and displays, retains, compares, and can graph calcChain.xml files.
+
+**Why is project the useful?**
+
+It is important to note that the target for this tool is Excel files with formulas. One thing I like about the usefulness is that there is already a use case out there. Academic fraud is something I was not aware of as a concern, but Datacolada shows that it is clearly a problem through the calcChain method and other statistical analysis methods they perform. I don't think it is useful in everyday Excel usage environments. I mean people may change formulas for spreadsheets etc. But where it can be particularly useful is in known datasets, and comparing peoples research to datasets, especially when they are supposed to be the same datasets. If there is an equivalent of a 'baseline' Exel file in a coroporate environment certainly it can be used to compare to other Excel files for formula differences. 
+
+Also with manual analysis of even a single file could lead to odd findings with cells seemingly out of place.
+
+the goal of this project is not to prove or disprove their fraud claims but try to expound on their findings for the calcChain.xml file and somewhat automate the data analysis and visualize the data to some degree.
+
+
+**What does the project do?**
+
+This project does the following:
+
+-Reads in (1) to multiple Excel files.
+
+-Uses zipfile library to extract the calChain.xml
+
+-Uses some regex to clean the data a little (removing r= from the excel data).
+
+-Generates a table of cells that have formulas according to calcChains.xml.
+
+-Can compare and diff multiple excel calcChain.mxl values.
+
+-Generates a csv and html file of the cell values.
+
+-Generates a png and html file of the graph.
+
+-Saves the (4) files to folder named calc_chain_results_ISOdatetimestamp
+
+**Future Work**
+
+-Perhaps compile into a stand-alone binary.
+
+-Consider other data elements that may be beneficial to extract from the target excel files.
+
+-Identify stronger methods of visualization. Not sure what, but I feel there is something better....
+
+-Identify other ways to detect possible tampering within a singular file in an automated fashion.
+
+-Perform more testing on calcChain.xml to see how different actions change the file.
+
+-Maybe think of a catchier name?
+
+**Video Link**
+
+[tbd]
+
+Resources/References/Inspiration
+
+http://datacolada.org/109
+
+https://www.schneier.com/blog/archives/2023/06/excel-data-forensics.html
+
+https://learn.microsoft.com/en-us/office/open-xml/working-with-the-calculation-chain
+
+https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.spreadsheet.calculationchain?view=openxml-2.8.1
+
+
 
 Cycle10 -
