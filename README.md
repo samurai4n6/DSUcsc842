@@ -193,7 +193,7 @@ This project does the following:
 
 -Reads in (1) to multiple Excel files.
 
--Uses zipfile library to extract the calChain.xml
+-Uses zipfile library to extract the calcChain.xml
 
 -Uses some regex to clean the data a little (removing r= from the excel data).
 
@@ -223,9 +223,9 @@ This project does the following:
 
 **Video Link**
 
-[tbd]
+https://youtu.be/gFzg0THKBgQ
 
-Resources/References/Inspiration
+**Resources/References/Inspiration**
 
 http://datacolada.org/109
 
