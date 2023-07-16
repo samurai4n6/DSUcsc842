@@ -237,4 +237,98 @@ https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.spreadsheet.
 
 
 
-Cycle10 -
+_**Cycle10 - PokeGo Forensics - GLUE (Geo-Location User Evidence)**_
+
+**What is the purpose of the project?**
+
+One of the purposes of this tool was to investigate a mobile application where a forensic tool may not parse the data automatically for an examiner and require manual analysis of evidence. Then once the relevant evidence is identifed how can we extract the wanted information in an automated format. 
+
+I utilized my teenage daughter's phone for the analysis and upon reviewing a handful of mobile apps like Waze, Life360, and a few others I noticed data of interest to include GPS coordinates. However, the commercial tool I was using was already parsing some of this data automatically. In reviewing other mobile apps I noticed that the Pokemon Go app had some data of interest. I spent a little bit of time reviewing and analyzing the data. In reviewing the data, I did not see data like what pokemon were caught and where, or what Pokestops were visited (that would be cool). That data may be there but may need further research to uncover. Bit I did find events that relate to the app that contained GPS coordinates and an epoch timestamp.
+
+The following context event types were identified with the GPS coordinates and timestamps:
+
+-ServiceLauncher
+
+-FitnessService
+
+-AwarenessService
+
+-AwarenessController
+
+-PersistentLocationController
+
+-InitialDialogue
+
+-RequestingPermissionFromOS
+
+-FinalDialogue
+
+Some of these are more obvious than others as far what the event likely relates to. More testing would need to be done to better understand these contexts. However, for the purpose of the tool currently, we are not to concerned about event type, only that it logged it, has a timestamp, and contains GPS coordinates. Which may give us whereabouts about where a person of interest may have been.
+
+**Why is project the useful?**
+
+Similar to the JPEG Exif assignment, identifying locations of where a subject or victim of investigation may have been may provide additional clues to an investigations and correlate with other evidence as to whereabouts. However, an interesting point for this situation compared to the JPEG Exif is that with the JPEG Exif the investigator is relying that a person use the device to take a picture on their mobile device and have the geo-location settings turned on, while for this tool the app is running and and could be running in the background generating these events. Considerably less user involvement is needed once the app is enabled for location awareness and set to run in the background.
+
+The Pokemon Go app is interesting, but this process and methodology could be applied to other mobile applications to identify data that may not be processed by forensic tools as well. Having the ability to manually review data in this manner makes a stronger investigator, and being able to identify and correlate locations where someone may be crucial in an investigation.
+
+**Testing Conditions**
+
+Device: iPhone 11.8
+
+OS: 16.5.1
+
+Acquisition Host OS: Windows 10
+
+Acquisition Method: iTunes Backup (Version 12.9.0)
+
+Acquisition Software: Magnet Acquire 
+
+Initially Porcessed Software: Magnet Axiom (extracted out app data from Axiom)
+
+**What does the project do?**
+
+This project does the following:
+
+-Takes in (2) arguements. A folder (where hte Pokemon Go app data should be) and an optional output directory.
+
+-Searches the specified folder recursively for plist files and when one is found, the field name databaseFilename is searched for within the plist file.
+
+-If the field databaseFilename is found within a plist file, this is the file name for the needed Sqlite3 database. The speciifed folder is searched recursively for the database file.
+
+-If the database file is found the EVENT_RECORDS table is queried for hte fields JSON, TIMESTAMP_MS, LATITUTDE, LoNGITUDE.
+
+-Generates a temporay JSON object of the data.
+
+-The TIMESTAMP_MS data is a date timestamp in epoch format, and we alsom convert the timestamp to the format YYYY-MM-DD hh:mm:ss.
+
+-Generates a csv with the fields event_type, timestamp, service, latitude, longitude, context, and converted_timestamp. Csv is saved to the default or specified output folder as pokemongo_output_YYYMMDDhhmmss.csv
+
+-GPS coordinates are then validated to start the process of plotting on a map via the folium library.
+
+-A map is generated of hte GPS coordinated activity and aggregated by GPS coordinate and date timestamp to reduce the number of pins on the map. (The map was slow when they were mapped indvidually). Map is saved to the default or specified output folder as pokemongo_map_YYYMMDDhhmmss.html.
+
+A stand alone binary was created for this tool.
+
+**Future Work**
+
+-Binary plists are specifc to MacOS and iOS, but both Android and iOS often use Sqlite3 databases to store data. Review setup in Android and update to be cross-platform.
+
+-Perform further research on the mobile application to determine what might be user activity and might be background or system activity.
+
+-Perform other research to determine other artifacts of forensic value. For example, there were other binary plist files that contained user id and other data. Ther ecould be other information of value.
+
+-Find way to possible make the map html smaller in size wit hthe custom pokeball icon.
+
+-Find way to possible make the stand alone binary smaller.
+
+
+**Video Link**
+
+[tbd]
+
+**Resources/References/Inspiration**
+
+https://www.usatoday.com/story/tech/nation-now/2016/07/11/while-you-track-pokmon-pokmon-go-tracks-you/86955092/
+
+https://www.sans.org/blog/a-sneak-peek-at-pokemon-go-application-forensics/
+
