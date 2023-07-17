@@ -1,0 +1,10 @@
+Make a stand alone binary
+
+python -m pip install pyinstaller
+
+pyinstaller --onefile --icon=PokeBall_icon.ico .\pokego_4n6_GLUE_no_custom_icon.py
+
+OR
+
+pyinstaller --onefile --icon=PokeBall_icon.ico .\pokego_4n6_GLUE.py
+
