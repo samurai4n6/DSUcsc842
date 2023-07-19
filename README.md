@@ -295,7 +295,7 @@ This project does the following:
 
 -If the field databaseFilename is found within a plist file, this is the file name for the needed Sqlite3 database. The speciifed folder is searched recursively for the database file.
 
--If the database file is found the EVENT_RECORDS table is queried for hte fields JSON, TIMESTAMP_MS, LATITUTDE, LoNGITUDE.
+-If the database file is found the EVENT_RECORDS table is queried for hte fields JSON, TIMESTAMP_MS, LATITUTDE, LONGITUDE.
 
 -Generates a temporay JSON object of the data.
 
