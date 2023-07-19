@@ -321,6 +321,8 @@ A stand alone binary was created for this tool.
 
 -Find way to possible make the stand alone binary smaller.
 
+-Create an artifact parser in Axiom
+
 
 **Video Link**
 
