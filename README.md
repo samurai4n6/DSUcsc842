@@ -241,7 +241,7 @@ _**Cycle10 - PokeGo Forensics - GLUE (Geo-Location User Evidence)**_
 
 **What is the purpose of the project?**
 
-One of the purposes of this tool was to investigate a mobile application where a forensic tool may not parse the data automatically for an examiner and require manual analysis of evidence. Then once the relevant evidence is identifed how can we extract the wanted information in an automated format. 
+One of the purposes of this tool was to investigate a mobile application where a forensic tool may not parse the data automatically for an examiner and require manual analysis of evidence. Then once the relevant evidence is identifed how can we extract the wanted information in an automated format.
 
 I utilized my teenage daughter's phone for the analysis and upon reviewing a handful of mobile apps like Waze, Life360, and a few others I noticed data of interest to include GPS coordinates. However, the commercial tool I was using was already parsing some of this data automatically. In reviewing other mobile apps I noticed that the Pokemon Go app had some data of interest. I spent a little bit of time reviewing and analyzing the data. In reviewing the data, I did not see data like what pokemon were caught and where, or what Pokestops were visited (that would be cool). That data may be there but may need further research to uncover. Bit I did find events that relate to the app that contained GPS coordinates and an epoch timestamp.
 
@@ -281,43 +281,43 @@ Acquisition Host OS: Windows 10
 
 Acquisition Method: Encrypted iTunes Backup (Version 12.9.0)
 
-Acquisition Software: Magnet Acquire 
+Acquisition Software: Magnet Acquire
 
-Initially Porcessed Software: Magnet Axiom (extracted out app data from Axiom)
+Initially Processed Software: Magnet Axiom (extracted out app data from Axiom)
 
 **What does the project do?**
 
 This project does the following:
 
--Takes in (2) arguements. A folder (where hte Pokemon Go app data should be) and an optional output directory.
+-Takes in (2) arguments. A folder (where the Pokemon Go app data should be) and an optional output directory.
 
 -Searches the specified folder recursively for plist files and when one is found, the field name databaseFilename is searched for within the plist file.
 
--If the field databaseFilename is found within a plist file, this is the file name for the needed Sqlite3 database. The speciifed folder is searched recursively for the database file.
+-If the field databaseFilename is found within a plist file, this is the file name for the needed Sqlite3 database. The specified folder is searched recursively for the database file.
 
--If the database file is found the EVENT_RECORDS table is queried for hte fields JSON, TIMESTAMP_MS, LATITUTDE, LONGITUDE.
+-If the database file is found the EVENT_RECORDS table is queried for the fields JSON, TIMESTAMP_MS, LATITUDE, LONGITUDE.
 
--Generates a temporay JSON object of the data.
+-Generates a temporary JSON object of the data.
 
--The TIMESTAMP_MS data is a date timestamp in epoch format, and we alsom convert the timestamp to the format YYYY-MM-DD hh:mm:ss.
+-The TIMESTAMP_MS data is a date timestamp in epoch format, and we also convert the timestamp to the format YYYY-MM-DD hh:mm:ss.
 
 -Generates a csv with the fields event_type, timestamp, service, latitude, longitude, context, and converted_timestamp. Csv is saved to the default or specified output folder as pokemongo_output_YYYMMDDhhmmss.csv
 
 -GPS coordinates are then validated to start the process of plotting on a map via the folium library.
 
--A map is generated of hte GPS coordinated activity and aggregated by GPS coordinate and date timestamp to reduce the number of pins on the map. (The map was slow when they were mapped indvidually). Map is saved to the default or specified output folder as pokemongo_map_YYYMMDDhhmmss.html.
+-A map is generated of hte GPS coordinated activity and aggregated by GPS coordinate and date timestamp to reduce the number of pins on the map. (The map was slow when they were mapped individually). Map is saved to the default or specified output folder as pokemongo_map_YYYMMDDhhmmss.html.
 
 A stand alone binary was created for this tool.
 
 **Future Work**
 
--Binary plists are specifc to MacOS and iOS, but both Android and iOS often use Sqlite3 databases to store data. Review setup in Android and update to be cross-platform.
+-Binary plists are specif to MacOS and iOS, but both Android and iOS often use Sqlite3 databases to store data. Review setup in Android and update to be cross-platform.
 
 -Perform further research on the mobile application to determine what might be user activity and might be background or system activity.
 
--Perform other research to determine other artifacts of forensic value. For example, there were other binary plist files that contained user id and other data. Ther ecould be other information of value.
+-Perform other research to determine other artifacts of forensic value. For example, there were other binary plist files that contained user id and other data. There could be other information of value.
 
--Find way to possible make the map html smaller in size wit hthe custom pokeball icon.
+-Find way to possible make the map html smaller in size with the custom pokeball icon.
 
 -Find way to possible make the stand alone binary smaller.
 
