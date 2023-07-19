@@ -324,7 +324,7 @@ A stand alone binary was created for this tool.
 
 **Video Link**
 
-[tbd]
+https://youtu.be/uGZFB-_UvLI
 
 **Resources/References/Inspiration**
 
