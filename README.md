@@ -279,7 +279,7 @@ OS: 16.5.1
 
 Acquisition Host OS: Windows 10
 
-Acquisition Method: iTunes Backup (Version 12.9.0)
+Acquisition Method: Encrypted iTunes Backup (Version 12.9.0)
 
 Acquisition Software: Magnet Acquire 
 
